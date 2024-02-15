@@ -8,6 +8,8 @@ public class ApiprodutosApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiprodutosApplication.class, args);
+		
+		//teste
 	}
 
 }
