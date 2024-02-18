@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -30,6 +31,9 @@ public class Product implements Serializable {
 
 	@NotNull(message = "A quantidade deve ser informada")
 	private int amount;
+
+	@ManyToOne
+	private Category category;
 
 	public Long getId() {
 		return id;
@@ -61,6 +65,14 @@ public class Product implements Serializable {
 
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 }
