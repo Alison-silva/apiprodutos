@@ -57,17 +57,13 @@ public class ProductController {
 
 	@GetMapping(value = "/productforname/{name}")
 	public ResponseEntity<List<Product>> productForName(@PathVariable("name") String name) {
-
 		List<Product> list = productsService.findProductByName(name);
-
 		return new ResponseEntity<List<Product>>(list, HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/productforcategory/{category}")
 	public ResponseEntity<List<Product>> productForCategory(@PathVariable("category") String category) {
-
 		List<Product> list = productsService.findProductByCategory(category);
-
 		return new ResponseEntity<List<Product>>(list, HttpStatus.OK);
 	}
 
