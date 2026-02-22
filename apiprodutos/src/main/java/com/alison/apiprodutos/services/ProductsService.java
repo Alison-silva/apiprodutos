@@ -16,6 +16,9 @@ public class ProductsService {
 	private ProductRepository productRepository;
 
 	public Product save(Product product) {
+		if (productRepository.existsByName(product.getName())) {
+			throw new IllegalArgumentException("Um produto com esse nome já foi cadastrado!");
+		}
 		return productRepository.save(product);
 	}
 

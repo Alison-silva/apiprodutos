@@ -20,4 +20,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 			+ " inner join category c on p.category_id = c.id " + " where c.category ilike %?1% ", nativeQuery = true)
 	List<Product> findProductByCategory(String category);
 
+	boolean existsByName(String name);
+
+
+
 }
